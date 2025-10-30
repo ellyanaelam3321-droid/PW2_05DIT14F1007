@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="css/styles.css"/>
+  </head>
+
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <form id="registrationForm" class="w-75 mx-auto mt-5 p-4 border rounded bg-white">
+
+    <h1><b>POLITEKNIK KUCHING SARAWAK</b></h1>
+    <h2>Student Registration Form</h2>
+  	<h3>Student Information</h3>
+
+    	<!--Student Image-->
+    	<div class="row mb-3">
+    		<label for="stdImage" class="col-sm-3 col-form-label">Student Image:</label>
+	    	<div class="col-sm-9">
+	    		<div class="image-box">
+		    		<img id="preview" src="" alt="Preview" style="display:none;">
+		    		<label for="stdImage" class="btn browse-btn">Browse</label>
+		    		<input type="file" id="stdImage" accept="image/*" style="display:none;" required>
+		    	</div>
+	    		<small class="text-muted d-block mt-1">(less than 5 Mb)</small>
+		    </div>
+    	</div>
+
+    	<!--Text Input-->
+    	<div class="row mb-3">
+    		<label for="stdName" class="col-sm-3 form-label">Student Name:</label>
+    	  	<div class="col-sm-9">
+    			<input type="text" class="form-control" id="stdName" placeholder="Full Name" onChange="toUpper(this)" required>
+    		</div>
+    	</div>
+
+    	<div class="row mb-3 align-items-center">
+    		<label for="fatherName" class="col-sm-3 form-label">Father's Name:</label>
+    		<div class="col-sm-9">
+    			<input type="text" class="form-control" id="fatherName" placeholder="Father's Full Name" onChange="toUpper(this)" required>
+    		</div>
+    	</div>
+
+    	<div class="row mb-3">
+    		<label for="motherName" class="col-sm-3 form-label">Mother's Name:</label>
+    		<div class="col-sm-9">
+    			<input type="text" class="form-control" id="motherName" placeholder="Mother's Full Name" onChange="toUpper(this)" required>
+    		</div>
+    	</div>
+
+    	<!--Option-->
+
+    	<div class="row mb-3 align-items-center">
+    		<label class="col-sm-3 col-form-label">Gender:</label>
+    		<div class="col-sm-9">
+    			<div class="form-check form-check-inline">
+    				<input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
+    				<label class="form-check-label" for="male">Male</label>
+    			</div>
+
+    			<div class="form-check form-check-inline">
+    				<input class="form-check-input" type="radio" name="gender" id="female" value="Female" required>
+    				<label class="form-check-label" for="female">Female</label>
+    			</div>
+    		</div>
+    	</div>
+
+		<!--Date-->
+
+    	<div class="row mb-3 align-items-center">
+    		<label for="dateOfBirth" class="col-sm-3 col-form-label">Date Of Birth:</label>
+    		<div class="col-sm-9">
+    			<input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+    		</div>
+    	</div>
+
+    	<div class="row mb-3">
+    		<label for="email" class="col-sm-3 form-label">E-mail:</label>
+    		<div class="col-sm-9">
+    			<input type="text" class="form-control" id="email" placeholder="email@xyz.com" onFocus="emailFocus(this)" onBlur="emailBlur(this)" required>
+    		</div>
+    	</div>
+
+    	<!--Dropdown-->
+    	<div class="row mb-3 align-items-center">
+    		<label for="level" class="col-sm-3 col-form-label">Level:</label>
+    		<div class="col-sm-9">
+    			<select class="form-select" id="level" name="level" required>
+    				<option value="Diploma">Diploma</option>
+    				<option value="Degree">Degree</option>
+    				<option value="Master">Master</option>
+    				<option value="PhD">PhD</option>
+    			</select>
+    		</div>
+    	</div>
+
+    	<div class="row mb-3 align-items-center">
+    		<label for="department" class="col-sm-3 col-form-label">Department:</label>
+    		<div class="col-sm-9">
+    			<select class="form-select" id="department" name="department" required>
+    				<option>JTMK</option>
+    				<option>JP</option>
+    				<option>JKA</option>
+    				<option>JKM</option>
+    				<option>JKE</option>
+    			</select>
+    		</div>
+    	</div>
+
+    	<div class="row mb-3">
+    		<label for="noPhone" class="col-sm-3 form-label">Tel/Mobile:</label>
+    		<div class="col-sm-9">
+    			<input type="text" class="form-control" id="noPhone" placeholder="01x-xxx-xxxx" required>
+    		</div>
+    	</div>
+    
+
+    <!--Address-->
+    <h3>Address</h3>
+    	
+    	<div class="row mb-3 align-items-center">
+    		<label for="state" class="col-sm-3 col-form-label">State:</label>
+    		<div class="col-sm-9">
+    			<select class="form-select" id="state" name="state" required>
+    				<option>Sarawak</option>
+    				<option>Sabah</option>
+    				<option>Kuala Lumpur</option>
+    				<option>Labuan</option>
+    				<option>Johor</option>
+    				<option>Kedah</option>
+    				<option>Kelantan</option>
+    				<option>Melaka</option>
+    				<option>Negeri Sembilan</option>
+    				<option>Pahang</option>
+    				<option>Perak</option>
+    				<option>Perlis</option>
+    				<option>Pulau Pinang</option>
+    				<option>Terengganu</option>
+    				<option>Putrajaya</option>
+    				<option>Selangor</option>
+    			</select>
+    		</div>
+    	</div>
+
+    	<div class="row mb-3">
+    		<label for="city" class="col-sm-3 form-label">City:</label>
+    		<div class="col-sm-9">
+    			<input type="text" class="form-control" id="city" placeholder="City" required>
+    		</div>
+    	</div>
+
+    	<div class="row mb-3">
+    		<label for="postcode" class="col-sm-3 form-label">Postcode:</label>
+    		<div class="col-sm-9">
+    			<input type="text" class="form-control" id="postcode" placeholder="Postcode" required>
+    		</div>
+    	</div>
+
+    	<div class="text-center mt-4 mb-4">
+		  <button type="submit" class="btn btn-primary me-2">Register</button>
+		  <button type="reset" class="btn btn-secondary" onclick="hideMessage()">Reset</button>
+		</div>
+
+    </form>
+
+	<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered">
+	      <div class="modal-content text-center p-3">
+	        <div class="modal-header border-0">
+	          <h5 class="modal-title" id="successModalLabel">Registration Successful</h5>
+	        </div>
+	        <div class="modal-body">
+	          Your details have been saved!
+	        </div>
+	        <div class="modal-footer border-0 justify-content-center">
+	          <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+	        </div>
+	      </div>
+	    </div>
+	 </div>
+
+    <script>
+    	const fileInput = document.getElementById('stdImage');
+    	const preview = document.getElementById('preview');
+
+    	fileInput.addEventListener('change', function(event){
+		    const file = event.target.files[0];
+		    if(file){
+		        if(file.size > 5 * 1024 * 1024){
+		            alert('File size must be less than 5MB');
+		            fileInput.value = '';
+		            preview.style.display = 'none';
+		            return;
+		        }
+		        preview.src = URL.createObjectURL(file);
+		        preview.style.display = 'block';
+		    }
+		});
+
+    	function toUpper(input){
+    		input.value = input.value.toUpperCase();
+    	}
+
+    	function emailFocus(input){
+    		input.style.backgroundColor = "#fff8e1";
+    	}
+
+    	function emailBlur(input){
+    		input.style.backgroundColor = "white";
+    	}
+
+    	const form = document.getElementById('registrationForm');
+			const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+
+			form.addEventListener('submit', function (event) {
+			  event.preventDefault(); // prevent page reload
+			  successModal.show(); // show Bootstrap modal
+			});
+
+	        function hideMessage(){
+			    document.getElementById("registrationForm").reset();
+			    preview.style.display = 'none';
+			}
+
+    </script>
+  </body>
+</html>
